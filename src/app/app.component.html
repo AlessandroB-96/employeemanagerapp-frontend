@@ -6,12 +6,12 @@
     <a class="navbar-brand">Employee manager App</a>
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search an employee..." aria-label="Search an employee...">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
 </nav>
 
-
-<div class="container py-5">
+<!-- Main container -->
+<div class="container py-5" id="main-container">
   <div class="row mb-4">
     <div class="col-lg-5">
       <h2 class="display-4 font-weight-light">Our team</h2>
@@ -21,7 +21,7 @@
   </div>
 
   <div class="row text-center">
-    <!-- Team item-->
+    <!--Dinamic team items-->
     <!-- "For" cicle that iterates for every item in the list Employee [] -->
     <div *ngFor="let employee of employees" class="col-xl-3 col-sm-6 mb-5">
       <div class="rounded shadow-sm py-5 px-4" style="background-color: rgb(178, 178, 254);"><img
@@ -43,71 +43,35 @@
     </div>
     <!-- End-->
 
-    <!-- Team item-->
-    <div class="col-xl-3 col-sm-6 mb-5">
-      <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar6.png"
-          alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-        <h5 class="mb-0">Samuel Hardy</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-        <br><span class="small text-uppercase text-muted">samuelhardy@mail.com</span>
-        <ul class="social mb-0 list-inline mt-3">
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- End-->
-
-    <!-- Team item-->
-    <div class="col-xl-3 col-sm-6 mb-5">
-      <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar8.png"
-          alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-        <h5 class="mb-0">Tom Sunderland</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-        <br><span class="small text-uppercase text-muted">samuelhardy@mail.com</span>
-        <ul class="social mb-0 list-inline mt-3">
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- End-->
-
-    <!-- Team item-->
-    <div class="col-xl-3 col-sm-6 mb-5">
-      <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-          alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-        <h5 class="mb-0">John Tarly</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-        <br><span class="small text-uppercase text-muted">samuelhardy@mail.com</span>
-        <ul class="social mb-0 list-inline mt-3">
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- End-->
-
-    <!-- Team item-->
-    <div class="col-xl-3 col-sm-6 mb-5">
-      <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-          alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-        <h5 class="mb-0">John Tarly</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-        <br><span class="small text-uppercase text-muted">samuelhardy@mail.com</span>
-        <ul class="social mb-0 list-inline mt-3">
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-          <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- End-->
-
   </div>
 </div>
+<!-- Main container - End -->
+
+<!-- Button trigger modal -->
+<button type="button" (click)="onOpenModal(null, 'add')" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+<!-- Button trigger modal - End -->
+
+<!-- Add Employee modal -->
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+</div>
+<!-- Add Employee modal - End -->
+
+<!-- Update Employee modal -->
+<div class="modal fade" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="updateEmployeeModalLabel" aria-hidden="true">
+</div>
+<!-- Update Employee modal - End -->
+
+<!-- Delete Employee modal -->
+<div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteEmployeeModalLabel" aria-hidden="true">
+</div>
+<!-- Delete Employee modal - End -->
+
+<!-- Warning if No Employees -->
+<div class="alert alert-warning" role="alert" style="font-size: large;">
+  No employee found!!
+</div>
+<!-- Warning if No Employees - End -->
 
 </html>
