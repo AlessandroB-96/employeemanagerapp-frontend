@@ -1,9 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/*Imports for css social media icons*/
 @import 'https://stackpath.bootstrapcdn.com/4.2.1/css/bootstrap.min.css';
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 
+html{
+    background-color: rgb(215, 211, 211);
+}
+
 body{
-    background:#eee;
+    background: #fff;
     margin-top:20px;
 }
 .img-thumbnail {
