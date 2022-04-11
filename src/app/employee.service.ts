@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 //Import of library rxJs, with this library i can use Observables
 import { Observable } from 'rxjs';
 import { Employee } from './employee';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { Employee } from './employee';
 export class EmployeeService {
 
   //String where to put the server URL
-  private apiServerUrl = ''
+  private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 
