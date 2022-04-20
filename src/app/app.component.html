@@ -32,12 +32,11 @@
           href="https://en.wikipedia.org/wiki/Helen_Keller">Helen Keller</a></p>
     </div>
   </div>
-  <!-- Main container - End -->
 
   <div class="row text-center">
     <!--Dinamic team items-->
     <!-- "For" cicle that iterates for every item in the list Employee [] -->
-    <div *ngFor="let employee of employees" class="col-xl-3 col-sm-6 mb-5">
+    <div *ngFor="let employee of employees" class="col-xl-3 col mb-5">
       <div class="rounded shadow-sm py-5 px-4" style="background-color: rgb(178, 178, 254);"><img
           src="{{employee?.imageUrl}}" alt="" width="100px"
           class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm" style="height: 100px; width: 100px;">
@@ -59,8 +58,8 @@
       </div>
     </div>
     <!-- End-->
-
   </div>
+
 </div>
 <!-- Main container - End -->
 
